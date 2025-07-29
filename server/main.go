@@ -22,8 +22,8 @@ func main() {
 	// WebSocket with JWT Auth
 	http.HandleFunc("/ws", handlers.WebSocketHandler)
 
-	log.Println("✅ Server is running at http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("✅ Server is running at http://0.0.0.0:8080")
+	log.Fatal(http.ListenAndServe("0.0.0.0:8080", nil)) // ✅ changed from ":8080"
 }
 
 // CORS middleware
